@@ -1,0 +1,15 @@
+﻿<Window x:Class="Opdracht_ImmoWin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Opdracht_ImmoWin"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Button Name="btnSorteer" Click="btnSorteer_Click" Content="Sorteer"></Button>
+            <ListBox Name="lbItems"></ListBox>
+        </StackPanel>
+    </Grid>
+</Window>
