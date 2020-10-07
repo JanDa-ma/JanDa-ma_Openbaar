@@ -1,0 +1,149 @@
+﻿<Window x:Class="prjSeller.wpfSeller"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prjSeller"
+        mc:Ignorable="d"
+        Title="Seller" Height="800" Width="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20px"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.05*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Menu DockPanel.Dock="Top" Grid.Row="0">
+            <MenuItem   Header="VintageItems" Name="btnDatabase">
+                <MenuItem Header="Profile" Name="btnProfile" Click="btnProfile_Click" ></MenuItem>
+                <Separator />
+                <MenuItem Header="Log out" Name="btnLogOut" Click="logOut_Click" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="About">
+                <MenuItem Header="About" Name="btnAbout" Click="btnAbout_Click" ></MenuItem>
+            </MenuItem>
+        </Menu>
+        <TabControl SelectedIndex="0" Grid.Row="1" Name="tabControl" Margin="0,6,-0.4,27.8" Grid.RowSpan="2" SelectionChanged="tabControl_SelectionChanged">
+            <TabItem Header="My items" Margin="0">
+                <Grid Margin="20 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="1.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.30*"></RowDefinition>
+                        <RowDefinition Height="0.10*"></RowDefinition>
+                        <RowDefinition Height="0.20*"></RowDefinition>
+                        <RowDefinition Height="0.55*"></RowDefinition>
+                        <RowDefinition Height="0.25*"></RowDefinition>
+                        <RowDefinition Height="0.25*"></RowDefinition>
+                        <RowDefinition Height="0.10*"></RowDefinition>
+                        <RowDefinition Height="0.10*"></RowDefinition>
+                        <RowDefinition Height="0.10*"></RowDefinition>
+                        <RowDefinition Height="0.15*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!-- Title -->
+                    <StackPanel  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Margin="50 0" Source="images/myitems.png"/>
+                        <TextBlock Text="Your items" TextAlignment="Center" FontSize="50" Margin="50 0"/>
+                        <Image Margin="50 0" Source="images/edititem.png"/>
+                    </StackPanel>
+                    <!-- Listbox my items 
+                    <ListBox    x:Name="lstItems"  SelectionChanged="lstItems_SelectionChanged" ></ListBox>-->
+                    <WrapPanel Name="pnlMyitems" Grid.Row="1" Grid.Column="0" Grid.RowSpan="8">
+
+                    </WrapPanel>
+                    <!-- Textblocks my items -->
+                    <TextBlock Grid.Row="1" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Item_id: "/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Name: *"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Description: *"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Properties: "/>
+                    <TextBlock Grid.Row="5" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Price: *€"/>
+                    <TextBlock Grid.Row="6" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="For sale: *"/>
+                    <TextBlock Grid.Row="7" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Category name: *"/>
+                    <TextBlock Grid.Row="8" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Coverphoto id: "/>
+                    <!-- Textboxes my items -->
+                    <TextBox Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" Margin="5" x:Name="txtItemId"/>
+                    <TextBox Grid.Row="2" Grid.Column="2" TextWrapping="Wrap" Margin="5" x:Name="txtName"/>
+                    <TextBox Grid.Row="3" Grid.Column="2" TextWrapping="Wrap" Margin="5" x:Name="txtDescription" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+                    <TextBox Grid.Row="4" Grid.Column="2" TextWrapping="Wrap" Margin="5" x:Name="txtProperties"  AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+                    <TextBox Grid.Row="5" Grid.Column="2" TextWrapping="Wrap" Margin="5" x:Name="txtPrice"/>
+                    <StackPanel Grid.Row="6" Grid.Column="2" Margin="5" Orientation="Horizontal" HorizontalAlignment="Left" >
+                        <RadioButton x:Name="rbYes" Content="Ja"  Margin="0 0 35 0"/>
+                        <RadioButton x:Name="rbNo"  Content="Nee" Margin="35 0 0 0"/>
+                    </StackPanel>
+                    <ComboBox Grid.Row="7" Grid.Column="2" Margin="5" x:Name="cmbCategoryName"  >
+                        <ComboBoxItem Content="lightning"/>
+                        <ComboBoxItem Content="objects"/>
+                        <ComboBoxItem Content="furniture"/>
+                    </ComboBox>
+                    <TextBox Grid.Row="8" Grid.Column="2" TextWrapping="Wrap" Margin="5" x:Name="txtCoverphotoId"/>
+                    <!-- Edit or delete -->
+                    <StackPanel Grid.Row="9" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" >
+                        <Button Margin="000 10 0 10" Padding="32 5" IsEnabled="False" Content="Edit"  Click="Edit_Click" Name="btnEdit" FontWeight="Bold"/>
+                        <Button Margin="170 10 0 10" Padding="5"  IsEnabled="False" Content="Delete"  Click="btnDelete_Click"    Name="btnDelete"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="New item" Margin="0" Padding="10,5">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.20*"/>
+                        <ColumnDefinition Width="0.15*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.30*"/>
+                    </Grid.RowDefinitions>
+                    <Image  Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" Source="images/fillIn.png"></Image>
+                    <StackPanel Grid.Column="1" Margin="0 20 0 0">
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Content="Name:*" />
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="0 10 0 0" Content="Description:*"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="0 45 0 0" Content="Properties:" />
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="0 10 0 0" Content="Price:€*"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Content="For sale:*"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Content="Category name:*"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="0 10 0 0" Content="Data:"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Grid.Row="0" Margin="0 20 0 0">
+                        <TextBox Margin="0 5 0 10" TextWrapping="Wrap" VerticalAlignment="Top" x:Name="txtNameNewItem"/>
+                        <ScrollViewer>
+                            <TextBox Margin="0 5 0 10" TextWrapping="Wrap" VerticalAlignment="Top" AcceptsReturn="True" x:Name="txtDescriptionNewItem" Height="60"/>
+                        </ScrollViewer>
+                        <TextBox Margin="0 5 0 10" VerticalAlignment="Top" x:Name="txtPropertiesNewItem" />
+                        <TextBox Margin="0 5 0 10" TextWrapping="Wrap" x:Name="txtPriceNewItem" />
+                        <StackPanel Orientation="Horizontal" Margin="0 0">
+                            <RadioButton Content="Ja"  Name="rbYesNewItem"></RadioButton>
+                            <RadioButton Content="Nee" Name="rbNoNewItem" Margin="50 0"/>
+                        </StackPanel>
+                        <ComboBox x:Name="cmbRolesNewUser" Margin="0 10">
+                            <ComboBoxItem Content="furniture" />
+                            <ComboBoxItem Content="lightning" />
+                            <ComboBoxItem Content="objects" />
+                        </ComboBox>
+                        <TextBlock x:Name="txtPhotoPath" Margin="0 4"></TextBlock>
+                        <Button x:Name="btnChoosePhotos"  Content="Add photo ..." Click="btnChoosePhotos_Click" Margin="0 2 400 0"></Button>
+                    </StackPanel>
+                    <Grid Grid.Row="1" Grid.Column="2" Margin="0 0 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="btnAanmaken" Content="Create"  HorizontalAlignment="Right" VerticalAlignment="Top" Padding="40 10" Grid.Column="1" Click="btnAanmaken_Click" Margin="0,0,0,0"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <!-- Status -->
+        <DockPanel Grid.Row="3"  Grid.Column="0">
+            <StatusBar DockPanel.Dock="Bottom">
+                <TextBlock Text="Status:" FontWeight="Bold" TextDecorations="Underline"></TextBlock>
+                <TextBlock Text="You can see and edit your items. You can also add new items." TextWrapping="Wrap" Name="lblStatus"></TextBlock>
+            </StatusBar>
+        </DockPanel>
+    </Grid>
+</Window>

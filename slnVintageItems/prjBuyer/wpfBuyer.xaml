@@ -1,0 +1,193 @@
+﻿<Window x:Class="prjBuyer.wpfBuyer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prjBuyer"
+        mc:Ignorable="d"
+        Title="Buyer" Height="800" Width="1200
+        ">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20px"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.05*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!-- Menu -->
+        <Menu DockPanel.Dock="Top" Grid.Row="0" Background="LightGray">
+            <MenuItem   Header="VintageItems" Name="btnDatabase" >
+                <MenuItem Header="Profile" Name="btnProfile" Click="btnProfile_Click" ></MenuItem>
+                <Separator />
+                <MenuItem Header="Log out" Name="btnLogOut" Click="logOut_Click" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="About">
+                <MenuItem Header="About" Name="btnAbout" Click="btnAbout_Click" ></MenuItem>
+            </MenuItem>
+        </Menu>
+        <!-- My items -->
+        <TabControl SelectedIndex="0" Grid.Row="1" Name="tabControl">
+            <TabItem Header="My items" Margin="0">
+                <Grid Margin="20 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="1.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.30*"></RowDefinition>
+                        <RowDefinition Height="0.10*"></RowDefinition>
+                        <RowDefinition Height="0.20*"></RowDefinition>
+                        <RowDefinition Height="0.55*"></RowDefinition>
+                        <RowDefinition Height="0.25*"></RowDefinition>
+                        <RowDefinition Height="0.25*"></RowDefinition>
+                        <RowDefinition Height="0.10*"></RowDefinition>
+                        <RowDefinition Height="0.10*"></RowDefinition>
+                        <RowDefinition Height="0.10*"></RowDefinition>
+                        <RowDefinition Height="0.15*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!-- Title -->
+                    <StackPanel  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Margin="50 0" Source="images/myitems.png"/>
+                        <TextBlock Text="Your items" TextAlignment="Center" FontSize="50" Margin="50 0"/>
+                        <Image Margin="50 0" Source="images/edititem.png"/>
+                    </StackPanel>
+                    <!-- Listbox my items 
+                    <ListBox    x:Name="lstItems"  SelectionChanged="lstItems_SelectionChanged" ></ListBox>-->
+                    <WrapPanel Name="pnlMyitems" Grid.Row="1" Grid.Column="0" Grid.RowSpan="8">
+                        
+                    </WrapPanel>
+                    <!-- Textblocks my items -->
+                    <TextBlock Grid.Row="1" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Item_id: "/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Name: *"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Description: *"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Properties: "/>
+                    <TextBlock Grid.Row="5" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Price: *€"/>
+                    <TextBlock Grid.Row="6" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="For sale: *"/>
+                    <TextBlock Grid.Row="7" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Category name: *"/>
+                    <TextBlock Grid.Row="8" Grid.Column="1" TextAlignment="Right"  Margin="5" Text="Coverphoto id: "/>
+                    <!-- Textboxes my items -->
+                    <TextBox Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" Margin="5" x:Name="txtItemId"/>
+                    <TextBox Grid.Row="2" Grid.Column="2" TextWrapping="Wrap" Margin="5" x:Name="txtName"/>
+                    <TextBox Grid.Row="3" Grid.Column="2" TextWrapping="Wrap" Margin="5" x:Name="txtDescription" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+                    <TextBox Grid.Row="4" Grid.Column="2" TextWrapping="Wrap" Margin="5" x:Name="txtProperties"  AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+                    <TextBox Grid.Row="5" Grid.Column="2" TextWrapping="Wrap" Margin="5" x:Name="txtPrice"/>
+                    <StackPanel Grid.Row="6" Grid.Column="2" Margin="5" Orientation="Horizontal" HorizontalAlignment="Left" >
+                        <RadioButton x:Name="rbYes" Content="Ja"  Margin="0 0 35 0"/>
+                        <RadioButton x:Name="rbNo"  Content="Nee" Margin="35 0 0 0"/>
+                    </StackPanel>
+                    <ComboBox Grid.Row="7" Grid.Column="2" Margin="5" x:Name="cmbCategoryName"  >
+                        <ComboBoxItem Content="lightning"/>
+                        <ComboBoxItem Content="objects"/>
+                        <ComboBoxItem Content="furniture"/>
+                    </ComboBox>
+                    <TextBox Grid.Row="8" Grid.Column="2" TextWrapping="Wrap" Margin="5" x:Name="txtCoverphotoId"/>
+                    <!-- Edit or delete -->
+                    <StackPanel Grid.Row="9" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" >
+                        <Button Margin="000 10 0 10" Padding="32 5" IsEnabled="False" Content="Edit"    Click="btnBijwerken_Click" Name="btnBijwerken" FontWeight="Bold"/>
+                        <Button Margin="170 10 0 10" Padding="5"    IsEnabled="False" Content="Delete"  Click="btnDelete_Click"    Name="btnDelete"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <!-- Buy items -->
+            <TabItem Header="Buy items" Margin="0" Padding="10,5">
+                <Grid  Margin="40 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45*"/>
+                        <ColumnDefinition Width="141*"/>
+                        <ColumnDefinition Width="94*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.20*"></RowDefinition>
+                        <RowDefinition Height="0.70*"></RowDefinition>
+                        <RowDefinition Height="0.8*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!-- Title -->
+                    <Image HorizontalAlignment="Left" Grid.ColumnSpan="2" Source="images/buynow.png"></Image>
+                    <TextBlock Text="Buy your items here!" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" TextAlignment="Center" FontSize="45"></TextBlock>
+                    <Image Grid.Row="0" Grid.Column="3" HorizontalAlignment="Right" Source="images/shopping.png"></Image>
+           
+                    <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+                        <WrapPanel x:Name="pnlItemsForSale" ></WrapPanel>
+                    </ScrollViewer>
+                    
+                    <!-- Filter -->
+                    <Grid Grid.Row="1" Grid.Column="3" Background="LightBlue" Margin="30 0 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.25*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Filter" FontSize="15" FontWeight="Black" Padding="10" TextDecorations="underline"></TextBlock>
+                        <!-- Labels filter -->
+                        <StackPanel Grid.Column="0" Grid.Row="1" Margin="20 0">
+                            <Label Padding="0" Margin="0 5"  Content="Category:"/>
+                            <Label Padding="0" Margin="0 10" Content="Price (maximum):"  />
+                        </StackPanel>
+                        <!-- Filter requirements -->
+                        <StackPanel Grid.Column="1" Grid.Row="1" Margin="0 0 20 0" >
+                            <ComboBox  x:Name="cmbCategoryFilter" Padding="2.5" SelectedIndex="0" Margin="0 5">
+                                <ComboBoxItem Content="--All categories--"/>
+                                <ComboBoxItem Content="objects"/>
+                                <ComboBoxItem Content="furniture"/>
+                                <ComboBoxItem Content="lightning"/>
+                            </ComboBox>
+                            <TextBox Margin="0 5" x:Name="txtPriceFilter"/>
+                            <Button  Margin="0 5" x:Name="btnFilter" Content="Filter now!" Click="btnFilter_Click"></Button>
+                        </StackPanel>
+                    </Grid>
+                    <!-- Selected buy item -->
+                    <Grid  Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" Margin="0 20 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.15*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.20*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.5*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="1.5*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="0.6*"></RowDefinition>
+                            <RowDefinition Height="0.6*"></RowDefinition>
+                            <RowDefinition Height="0.6*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <!-- Labels by selected item -->
+                        <TextBlock TextAlignment="Right" Grid.Row="0" Grid.Column="0" Text="Item_id: "/>
+                        <TextBlock TextAlignment="Right" Grid.Row="1" Grid.Column="0" Margin="0 5" Text="Name: "/>
+                        <TextBlock TextAlignment="Right" Grid.Row="2" Grid.Column="0" Margin="0 5" Text="Description: "/>
+                        <TextBlock TextAlignment="Right" Grid.Row="3" Grid.Column="0" Margin="0 5" Text="Properties: "/>
+                        <TextBlock TextAlignment="Right" Grid.Row="4" Grid.Column="0" Margin="0 5" Text="Price: €"/>
+                        <TextBlock TextAlignment="Right" Grid.Row="5" Grid.Column="0" Margin="0 5" Text="Category name: "/>
+                        <TextBlock TextAlignment="Right" Grid.Row="6" Grid.Column="0" Margin="0 5" Text="Owner id: "/>
+                        <!-- Textboxes by selected item -->
+                        <TextBlock TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" x:Name="txtItemIdForSale"></TextBlock>
+                        <TextBox   TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" AcceptsReturn="True" IsReadOnly="True" Margin="0 5" x:Name="txtNameForSale"/>
+                        <TextBox   TextWrapping="Wrap" Grid.Row="2" Grid.Column="1" AcceptsReturn="True" IsReadOnly="True" Margin="0 5" x:Name="txtDescriptionForSale" ScrollViewer.VerticalScrollBarVisibility="Visible"></TextBox>
+                        <TextBox   TextWrapping="Wrap" Grid.Row="3" Grid.Column="1" AcceptsReturn="True" IsReadOnly="True" Margin="0 5" x:Name="txtPropertiesForSale"  ScrollViewer.VerticalScrollBarVisibility="Visible"></TextBox>
+                        <TextBox   TextWrapping="Wrap" Grid.Row="4" Grid.Column="1" AcceptsReturn="True" IsReadOnly="True" Margin="0 5" x:Name="txtPriceForSale"/>
+                        <TextBox   TextWrapping="Wrap" Grid.Row="5" Grid.Column="1" AcceptsReturn="True" IsReadOnly="True" Margin="0 5" x:Name="txtCategoryForSale"/>
+                        <TextBox   TextWrapping="Wrap" Grid.Row="6" Grid.Column="1" AcceptsReturn="True" IsReadOnly="True" Margin="0 5" x:Name="txtOwnerIdForSale"/>
+                        <!-- Buy selected item -->
+                       
+                        <Button IsEnabled="False" Grid.Row="3" Grid.RowSpan="3" Grid.Column="2" Margin="20 5" x:Name="btnBuy" Background="Transparent" Click="btnBuy_Click">
+                             <Image x:Name="imgBuy" HorizontalAlignment="Right" Source="images/pay.png" Opacity="0.3"></Image>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <!-- Statusbar -->
+        <DockPanel Grid.Row="3"  Grid.Column="0">
+            <StatusBar DockPanel.Dock="Bottom">
+                <TextBlock Text="Status:" FontWeight="Bold" TextDecorations="Underline"></TextBlock>
+                <TextBlock Text="You can see and edit your items. You can also buy items." TextWrapping="Wrap" Name="lblStatus"></TextBlock>
+            </StatusBar>
+        </DockPanel>
+    </Grid>
+</Window>

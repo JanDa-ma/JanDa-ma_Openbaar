@@ -1,0 +1,157 @@
+﻿<Window x:Class="prjAdmin.wpfAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prjAdmin"
+        mc:Ignorable="d"
+        Title="Admin" Height="450" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20px"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.15*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Menu DockPanel.Dock="Top" Grid.Row="0">
+            <MenuItem   Header="VintageItems" Name="btnDatabase">
+                <MenuItem Header="Profile" Name="btnProfile" Click="btnProfile_Click" ></MenuItem>
+                <Separator />
+                <MenuItem Header="Log out" Name="btnLogOut" Click="logOut_Click" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="About">
+                <MenuItem Header="About" Name="btnAbout" Click="btnAbout_Click" ></MenuItem>
+            </MenuItem>
+        </Menu>
+        <TabControl SelectedIndex="0" Grid.Row="1" Name="tabControl">
+            <TabItem Header="Edit users" Margin="0">
+                <Grid Grid.Row="1" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.8*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="0.2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1">
+                        <WrapPanel x:Name="pnlUsers" ></WrapPanel>
+                    </ScrollViewer>
+                    <StackPanel Grid.Column="1">
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Content="Id:" />
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Content="Login:" />
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Content="Paswoord:"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Content="Firstname:"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Content="Lastname:"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Content="Email:"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Content="Telephone:"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Content="Birthdate:"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Content="Rolename:"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" >
+                        <TextBox Margin="0 4" TextWrapping="Wrap" Text="" x:Name="txtId" IsReadOnly="True" />
+                        <TextBox Margin="0 4" TextWrapping="Wrap" Text="" x:Name="txtLogin"/>
+                        <TextBox Margin="0 4" TextWrapping="Wrap" Text="" x:Name="txtpaswoord"/>
+                        <TextBox Margin="0 4" TextWrapping="Wrap" Text="" x:Name="txtFirstname"/>
+                        <TextBox Margin="0 4" TextWrapping="Wrap" Text="" x:Name="txtLastname"/>
+                        <TextBox Margin="0 4" TextWrapping="Wrap" Text="" x:Name="txtEmail"/>
+                        <TextBox Margin="0 4" TextWrapping="Wrap" Text="" x:Name="txtTelephone"/>
+                        <TextBox Margin="0 4" TextWrapping="Wrap" Text="" x:Name="txtBirthdate"/>
+                        <ComboBox x:Name="cmbRoles" Margin="0 4">
+                            <ComboBoxItem Content="- huidig -"></ComboBoxItem>
+                            <ComboBoxItem Content="admin"></ComboBoxItem>
+                            <ComboBoxItem Content="seller"></ComboBoxItem>
+                            <ComboBoxItem Content="buyer"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Padding="30 5"  Margin="0 0 0 0" IsEnabled="False" Click="btnEdit_Click"   x:Name="btnEdit"    Content="Edit"/>
+                        <Button Padding="10 0" Margin="40 0 0 0" IsEnabled="False" Click="btnDelete_Click" x:Name="btnDelete"  Content="Delete" Background="Red"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="3"  Orientation="Vertical" >
+                        <Image Grid.Row="0" Grid.Column="3" VerticalAlignment="Top" Margin="20" ></Image>
+                        <Image Grid.Row="0" Grid.Column="3" VerticalAlignment="Top" Margin="00"></Image>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="New user" Margin="0" Padding="10,5">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.25*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.20*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Padding="0" Margin="0 0 0 5" Content="Login:*"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Padding="0" Margin="0 0 0 5" Content="Paswoord:*"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Padding="0" Margin="0 0 0 5" Content="Confirm Password:*"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Padding="0" Margin="0 0 0 5" Content="Firstname:*"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Padding="0" Margin="0 0 0 5" Content="Lastname:*"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Padding="0" Margin="0 0 0 5" Content="Email:"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Padding="0" Margin="0 0 0 5" Content="Telephone:"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Padding="0" Margin="0 0 0 5" Content="Gender:"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Padding="0" Margin="0 0 0 5" Content="Birthdate: *"/>
+                        <Label VerticalAlignment="Top" HorizontalContentAlignment="Right" Padding="0" Margin="0 0 0 5" Content="Rolename: *"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Grid.Row="0" >
+                        <TextBox Margin="0 0 0 3" TextWrapping="Wrap" x:Name="txtLoginNewUser"/>
+                        <TextBox Margin="0 0 0 3" TextWrapping="Wrap" x:Name="txtpaswoordNewUser"/>
+                        <PasswordBox  x:Name="txtPasswordConfirmNewUser" VerticalAlignment="Top" Margin="0 0 0 3"/>
+                        <TextBox Margin="0 0 0 3" TextWrapping="Wrap" x:Name="txtFirstnameNewUser"/>
+                        <TextBox Margin="0 0 0 3" TextWrapping="Wrap" x:Name="txtLastnameNewUser"/>
+                        <TextBox Margin="0 0 0 3" TextWrapping="Wrap" x:Name="txtEmailNewUser"/>
+                        <TextBox Margin="0 0 0 3" TextWrapping="Wrap" x:Name="txtTelephoneNewUser"/>
+                        <StackPanel Orientation="Horizontal" Margin="5 0">
+                            <RadioButton Content="M" Margin="5 0" Name="rbM"></RadioButton>
+                            <RadioButton Content="F" Margin="5 0" Name="rbF"></RadioButton>
+                            <RadioButton Content="U" Margin="5 0" Name="rbU" IsChecked="True"></RadioButton>
+                        </StackPanel>
+                        <DatePicker x:Name="txtBirthdateNewUser" Margin="0 4" IsTodayHighlighted="False"/>
+                        <ComboBox   x:Name="cmbRolesNewUser" Margin="0 2">
+                            <ComboBoxItem Content="admin"/>
+                            <ComboBoxItem Content="seller"/>
+                            <ComboBoxItem Content="buyer"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <Grid Grid.Row="1" Grid.Column="1" Margin="0 0 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button VerticalAlignment="Center" Padding="20 05" Grid.Column="0" HorizontalAlignment="Left"  x:Name="btnCancel"   Content="Cancel"   Click="btnCancel_Click"    />
+                        <Button VerticalAlignment="Center" Padding="40 10" Grid.Column="1" HorizontalAlignment="Right" x:Name="btnAanmaken" Content="Aanmaken" Click="btnAanmaken_Click"   />
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem  Header="History" Margin="0" Padding="10,5">
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="0.1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!--><ListBox x:Name="lstHistory"></ListBox>-->
+                    <ScrollViewer>
+                        <WrapPanel Name="pnlHistory">
+                        </WrapPanel>
+                    </ScrollViewer>
+                    <Button HorizontalAlignment="Right" Grid.Row="1" x:Name="btnRefreshHistory" Content="Refresh" Margin="2" Click="btnRefreshHistory_Click"></Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <DockPanel Grid.Row="3"  Grid.Column="0">
+            <StatusBar DockPanel.Dock="Bottom">
+                <TextBlock Text="Status:" FontWeight="Bold" TextDecorations="Underline"></TextBlock>
+                <TextBlock Text="You can see and change users You can also create new users and see the sales history." TextWrapping="Wrap" Name="lblStatus"></TextBlock>
+            </StatusBar>
+        </DockPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\bin\Debug\wpfAdmin.exe.config
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\bin\Debug\wpfAdmin.exe
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\bin\Debug\wpfAdmin.pdb
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\obj\Debug\wpfAdmin.csprojAssemblyReference.cache
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\obj\Debug\MainWindow.g.cs
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\obj\Debug\App.g.cs
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\obj\Debug\wpfAdmin_MarkupCompile.cache
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\obj\Debug\wpfAdmin_MarkupCompile.lref
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\obj\Debug\MainWindow.baml
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\obj\Debug\wpfAdmin.g.resources
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\obj\Debug\wpfAdmin.Properties.Resources.resources
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\obj\Debug\wpfAdmin.csproj.GenerateResource.cache
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\obj\Debug\wpfAdmin.exe
+C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\wpfAdmin\obj\Debug\wpfAdmin.pdb
