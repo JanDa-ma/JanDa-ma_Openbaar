@@ -1,6 +1,0 @@
-C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\ClassesBoekBeheer\bin\Debug\ClassesBoekBeheer.dll
-C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\ClassesBoekBeheer\bin\Debug\ClassesBoekBeheer.pdb
-C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\ClassesBoekBeheer\obj\Debug\ClassesBoekBeheer.csproj.CoreCompileInputs.cache
-C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\ClassesBoekBeheer\obj\Debug\ClassesBoekBeheer.dll
-C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\ClassesBoekBeheer\obj\Debug\ClassesBoekBeheer.pdb
-C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\ClassesBoekBeheer\obj\Debug\ClassesBoekBeheer.csprojAssemblyReference.cache
