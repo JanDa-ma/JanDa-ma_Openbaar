@@ -1,0 +1,22 @@
+﻿<Application x:Class="BoekBeheerApplication.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BoekBeheerApplication"
+             xmlns:BoekbeheerData="clr-namespace:BoekBeheer.Data;assembly=BoekBeheer.Data"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type BoekbeheerData:Boek}" >
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="{Binding Id}"></TextBlock>
+                <TextBlock Text="{Binding Titel}"></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Auteur.Voornaam}"></TextBlock>
+                    <TextBlock Text=" "></TextBlock>
+                    <TextBlock Text="{Binding Auteur.Achternaam}"></TextBlock>
+                </StackPanel>
+                <TextBlock Text="{Binding Genre.GenreNaam}"></TextBlock>
+                <TextBlock Text="=================================="></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

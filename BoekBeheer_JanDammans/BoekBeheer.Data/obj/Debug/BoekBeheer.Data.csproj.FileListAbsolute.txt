@@ -1,0 +1,15 @@
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\bin\Debug\BoekBeheer.Data.dll.config
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\bin\Debug\BoekBeheer.Data.dll
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\bin\Debug\BoekBeheer.Data.pdb
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\bin\Debug\BoekBeheerInterfaces.dll
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\bin\Debug\EntityFramework.dll
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\bin\Debug\BoekBeheerInterfaces.pdb
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\bin\Debug\EntityFramework.xml
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\obj\Debug\BoekBeheer.Data.csprojAssemblyReference.cache
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\obj\Debug\BoekBeheer.Data.csproj.CoreCompileInputs.cache
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\obj\Debug\BoekBeheer.Data.csproj.CopyComplete
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\obj\Debug\BoekBeheer.Data.dll
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\obj\Debug\BoekBeheer.Data.pdb
+C:\Users\Damma\Documents\GitHub\AAD-portfolio-JanDammans\BoekBeheer_JanDammans\BoekBeheer.Data\bin\Debug\WindowsBase.dll
