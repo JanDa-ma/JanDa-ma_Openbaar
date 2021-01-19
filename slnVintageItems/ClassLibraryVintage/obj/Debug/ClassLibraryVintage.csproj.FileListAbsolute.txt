@@ -1,6 +1,0 @@
-C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\ClassLibraryVintage\bin\Debug\ClassLibraryVintage.dll
-C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\ClassLibraryVintage\bin\Debug\ClassLibraryVintage.pdb
-C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\ClassLibraryVintage\obj\Debug\ClassLibraryVintage.dll
-C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\ClassLibraryVintage\obj\Debug\ClassLibraryVintage.pdb
-C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\ClassLibraryVintage\obj\Debug\ClassLibraryVintage.csprojAssemblyReference.cache
-C:\Users\Damma\Documents\GitHub\OOAD-portfolio-JanDammans\slnVintageItems\ClassLibraryVintage\obj\Debug\ClassLibraryVintage.csproj.CoreCompileInputs.cache
