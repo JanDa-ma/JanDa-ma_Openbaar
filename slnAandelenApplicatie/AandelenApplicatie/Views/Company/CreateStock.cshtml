@@ -1,0 +1,52 @@
+﻿@model AandelenApplicatie.Models.Company.BindingModels.StockModel
+
+@{
+    ViewData["Title"] = "CreateStock";
+}
+
+<h1>CreateStock</h1>
+
+<h4>StockModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateStock">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="StockListId" type="hidden" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValueChance" class="control-label"></label>
+                <input asp-for="ValueChance" class="form-control" placeholder="In %" />
+                <span asp-validation-for="ValueChance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChangeValue" class="control-label"></label>
+                <input asp-for="ChangeValue" class="form-control" />
+                <span asp-validation-for="ChangeValue" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,13 @@
+﻿@model AandelenApplicatie.Models.Message.Message
+
+@if (Model.Type == AandelenApplicatie.Models.Message.TypeMessage.Succes)
+{
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">@Model.Title</h4>
+        <p>@Model.Description</p>
+    </div>
+}
+else if (Model.Type == AandelenApplicatie.Models.Message.TypeMessage.Fail)
+{
+    //TODO
+}
